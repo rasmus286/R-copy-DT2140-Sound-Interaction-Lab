@@ -53,11 +53,26 @@ function accelerationChange(accx, accy, accz) {
   // playAudio()
 }
 
+let aimLocked = false;
+
 function rotationChange(rotx, roty, rotz) {
+    
+    if (
+        (rotx > -5 && rotx < 5) &&
+        (roty > -100 && roty < -80) &&
+        (rotz > 10 && rotz < 30)
+    ) {
+        aimLocked = true; 
+    }
+    
+
 }
 
 function mousePressed() {     
-    playAudio();
+    if (aimLocked == true){
+        playAudio();
+    }
+
   // Use this for debugging from the desktop!
 }
 

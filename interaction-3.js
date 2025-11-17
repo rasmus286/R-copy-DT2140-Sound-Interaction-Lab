@@ -64,8 +64,9 @@ function rotationChange(rotx, roty, rotz) {
     ) {
         aimLocked = true; 
     }
-    
-
+    else {
+        aimLocked = false; 
+    }
 }
 
 function mousePressed() {     

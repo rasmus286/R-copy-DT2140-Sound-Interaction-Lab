@@ -56,7 +56,6 @@ function accelerationChange(accx, accy, accz) {
 }
 
 function rotationChange(rotx, roty, rotz) {
-
 }
 
 function mousePressed() {
@@ -66,7 +65,7 @@ function mousePressed() {
 
 function deviceMoved() {
     movetimer = millis();
-    statusLabels[2].style("color", "green");
+    statusLabels[2].style("color", "pink");
 }
 
 function deviceTurned() {
@@ -113,4 +112,4 @@ function playAudio() {
 
 //==========================================================================================
 // END
-//==========================================================================================ss
+//==========================================================================================

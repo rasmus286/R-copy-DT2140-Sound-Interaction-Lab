@@ -58,8 +58,6 @@ function rotationChange(rotx, roty, rotz) {
 
 function mousePressed() { 
     playAudio();
-    
-    
   // Use this for debugging from the desktop!
 }
 
@@ -95,7 +93,7 @@ function getMinMaxParam(address) {
 //
 //==========================================================================================
 
-function playAudio(pressure) {
+function playAudio() {
   if (!dspNode) {
     return;
   }
@@ -103,7 +101,7 @@ function playAudio(pressure) {
     return;
   }
   // console.log(pressure);
-    dspNode.setParamValue("/laser/trigger", pressure);
+    dspNode.setParamValue("/laser/trigger", 1);
     setTimeout(() => { dspNode.setParamValue("/laser/trigger", 0) }, 100);
 }
 

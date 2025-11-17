@@ -12,7 +12,7 @@ let dspNodeParams = null;
 let jsonParams = null;
 
 // Change here to ("tuono") depending on your wasm file name
-const dspName = "brass";
+const dspName = "laser";
 const instance = new FaustWasm2ScriptProcessor(dspName);
 
 // output to window or npm package module
@@ -53,10 +53,15 @@ function accelerationChange(accx, accy, accz) {
   // playAudio()
 }
 
-function rotationChange(rotx, roty, rotz) {}
+function rotationChange(rotx, roty, rotz) {
+}
 
 function mousePressed() {
-  playAudio(mouseX / windowWidth);
+
+    if ((-5 < rotx && rotx < 5) && (-100 < roty && roty < -80) && (10 < rotz && rotz < 30)){   
+        playAudio();
+    }
+    
   // Use this for debugging from the desktop!
 }
 
@@ -99,8 +104,9 @@ function playAudio(pressure) {
   if (audioContext.state === "suspended") {
     return;
   }
-  console.log(pressure);
-  dspNode.setParamValue("/brass/blower/pressure", pressure);
+  // console.log(pressure);
+    dspNode.setParamValue("/laser/trigger", pressure);
+    setTimeout(() => { dspNode.setParamValue("/laser/trigger", 0) }, 100);
 }
 
 //==========================================================================================

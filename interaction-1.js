@@ -66,7 +66,7 @@ function mousePressed() {
 
 function deviceMoved() {
     movetimer = millis();
-    statusLabels[2].style("color", "pink");
+    statusLabels[2].style("color", "green");
 }
 
 function deviceTurned() {

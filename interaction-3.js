@@ -56,7 +56,7 @@ function accelerationChange(accx, accy, accz) {
 function rotationChange(rotx, roty, rotz) {
 }
 
-function mousePressed() { 
+function mousePressed() {     
     playAudio();
   // Use this for debugging from the desktop!
 }

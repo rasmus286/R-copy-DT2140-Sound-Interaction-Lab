@@ -56,11 +56,9 @@ function accelerationChange(accx, accy, accz) {
 function rotationChange(rotx, roty, rotz) {
 }
 
-function mousePressed() {
-
-    if ((-5 < rotx && rotx < 5) && (-100 < roty && roty < -80) && (10 < rotz && rotz < 30)){   
-        playAudio();
-    }
+function mousePressed() { 
+    playAudio();
+    
     
   // Use this for debugging from the desktop!
 }
